@@ -1,4 +1,13 @@
-print("test")
+for item in range(5):
+    number = input("Please enter the number : ")
 
-for item in range(10):
-    print(item)
+    if len(number)>5:
+        print("The number len grater than 5")
+        continue
+
+    sum = 0
+    for num in number:
+        sum += int(num)
+
+    if sum % 2 == 0:
+        print(number)

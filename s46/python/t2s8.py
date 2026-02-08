@@ -1,5 +1,15 @@
 
 
+def usernames():
+    file = open("users.txt", "r")
+    users = []
+    for line in file:
+        line_split = line.split(":")
+        users.append(line_split[0])
+    
+    file.close()
+    return users
+
 def login(username, password):
     file = open("users.txt", "r")
 
@@ -18,13 +28,19 @@ def login(username, password):
     return False
 
 def register(username, password):
+    if len(password)<8:
+        print("password length is less than 8 char !!!!")
+        return
+    result =  usernames()
+    if username in result:
+        print("This username is exist in website, please user another username!!!")
+        return
+
     file = open("users.txt", "a")
     file.write(f"{username}:{password}\n")
     file.close()
 
     return f"username:{username} and password: {password} inserted "
-
-
 
 
 while True:

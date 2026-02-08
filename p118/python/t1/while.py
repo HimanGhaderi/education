@@ -1,25 +1,18 @@
 
 
+a = input("Please enter a: ")
+b = input("Please enter b: ")
+
+a = int(a)
+b = int(b)
 
 
-adad = [1,5,2,3,6,9]
-
-for radif in adad:
-    if radif%2 == 0:
-        print(radif, "zoj ast")
-    else:
-        print(radif, "fard ast")
-
-
-
-
-
-
-
-
-
-
-
+result = 0
+while b>0:
+    result += a
+    b -= 1
+    
+print(result)
 
 
 
